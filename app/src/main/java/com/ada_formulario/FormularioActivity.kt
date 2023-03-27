@@ -29,11 +29,11 @@ class FormularioActivity : AppCompatActivity() {
         val age = preferences.getString(AGE, "")
         val cpf = preferences.getString(CPF, "")
 
-        viewBinding.etUsername.hint = username
-        viewBinding.etEmail.hint = email
-        viewBinding.etPassword.hint = password
-        viewBinding.etAge.hint = age
-        viewBinding.etCpf.hint = cpf
+        if (!username.equals("")) viewBinding.etUsername.hint = username
+        if (!email.equals("")) viewBinding.etEmail.hint = email
+        if (!password.equals("")) viewBinding.etPassword.hint = password
+        if (!age.equals("")) viewBinding.etAge.hint = age
+        if (!cpf.equals("")) viewBinding.etCpf.hint = cpf
     }
 
     private fun saveInformation() {

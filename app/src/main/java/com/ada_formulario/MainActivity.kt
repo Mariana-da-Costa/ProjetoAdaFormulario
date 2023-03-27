@@ -19,13 +19,29 @@ class MainActivity : AppCompatActivity() {
         val preferences = getSharedPreferences(KEEP_CONNECTED_PREFS, MODE_PRIVATE)
         val email = preferences.getString(EMAIL, "")
         val password = preferences.getString(PASSWORD, "")
+        viewBinding.txtlEmail.hint = email
 
-        viewBinding.editTEmailMain.hint = email
-        viewBinding.editTPasswordMain.hint = password
-
-        viewBinding.btnLoginMain.setOnClickListener {
+        if (email.equals("") && password.equals("")) {
             val intent = Intent(this, FormularioActivity::class.java)
             startActivity(intent)
+        }
+
+        viewBinding.btnLogin.setOnClickListener {
+            if (!email.isNullOrBlank() && !password.isNullOrBlank()) {
+                if (viewBinding.txtlEmail.editText?.text.toString() != email) {
+                    viewBinding.txtlEmail.error = "Email incorreto"
+                } else if (viewBinding.txtlPassword.editText?.text.toString() != password) {
+                    viewBinding.txtlPassword.error = "Senha incorreta"
+                }
+            }
+
+            if (viewBinding.txtlEmail.editText?.text.toString() == email && viewBinding.txtlPassword.editText?.text
+                    .toString() ==
+                password
+            ) {
+                val intent = Intent(this, FormularioActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
