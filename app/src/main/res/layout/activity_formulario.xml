@@ -73,7 +73,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:hint="@string/cpf"
-        android:imeOptions="actionNext"
+        android:imeOptions="actionDone"
         android:inputType="number"
         android:textColor="@color/black"
         android:textColorHint="@color/gray" />
@@ -84,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/pink"
+        app:cornerRadius="25dp"
         android:text="@string/save" />
 
 </LinearLayout>
