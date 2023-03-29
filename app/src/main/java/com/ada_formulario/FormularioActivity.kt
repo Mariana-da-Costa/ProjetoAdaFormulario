@@ -1,6 +1,7 @@
 package com.ada_formulario
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ class FormularioActivity : AppCompatActivity() {
         setContentView(view)
         recoverInformation()
         saveInformation()
+        openNotes()
     }
 
     private fun recoverInformation() {
@@ -48,6 +50,13 @@ class FormularioActivity : AppCompatActivity() {
                 .putString(AGE, viewBinding.etAge.text.toString())
                 .putString(CPF, viewBinding.etCpf.text.toString())
                 .apply()
+        }
+    }
+
+    private fun openNotes() {
+        viewBinding.btnNotas.setOnClickListener {
+            val intent = Intent(this, NotasActivity::class.java)
+            startActivity(intent)
         }
     }
 

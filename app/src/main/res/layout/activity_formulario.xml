@@ -29,7 +29,8 @@
         android:imeOptions="actionNext"
         android:inputType="text"
         android:textColor="@color/black"
-        android:textColorHint="@color/gray" />
+        android:textColorHint="@color/gray"
+        android:visibility="visible" />
 
     <EditText
         android:id="@+id/et_email"
@@ -86,5 +87,14 @@
         android:backgroundTint="@color/pink"
         app:cornerRadius="25dp"
         android:text="@string/save" />
+
+    <Button
+        android:id="@+id/btn_notas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/pink"
+        app:cornerRadius="25dp"
+        android:text="Notas" />
 
 </LinearLayout>
